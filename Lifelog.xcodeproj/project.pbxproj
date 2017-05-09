@@ -17,6 +17,8 @@
 		E902C4401EBBBCB10026B367 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E902C43F1EBBBCB10026B367 /* dog1.jpg */; };
 		E902C4421EBBBCE30026B367 /* 赤色.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E902C4411EBBBCE30026B367 /* 赤色.jpg */; };
 		E902C4441EBBC1F60026B367 /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E902C4431EBBC1F60026B367 /* cat1.jpg */; };
+		E902C4461EC1CFF90026B367 /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4451EC1CFF90026B367 /* InputDataViewController.swift */; };
+		E902C4481EC1D64E0026B367 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4471EC1D64E0026B367 /* SelectViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E902C43F1EBBBCB10026B367 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
 		E902C4411EBBBCE30026B367 /* 赤色.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "赤色.jpg"; sourceTree = "<group>"; };
 		E902C4431EBBC1F60026B367 /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat1.jpg; sourceTree = "<group>"; };
+		E902C4451EC1CFF90026B367 /* InputDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
+		E902C4471EC1D64E0026B367 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +109,15 @@
 			children = (
 				E902C4111EBBB5180026B367 /* AppDelegate.swift */,
 				E902C4131EBBB5180026B367 /* ViewController.swift */,
+				E902C4451EC1CFF90026B367 /* InputDataViewController.swift */,
+				E902C4471EC1D64E0026B367 /* SelectViewController.swift */,
+				E902C41D1EBBB5180026B367 /* Info.plist */,
 				E902C4411EBBBCE30026B367 /* 赤色.jpg */,
 				E902C43F1EBBBCB10026B367 /* dog1.jpg */,
 				E902C4151EBBB5180026B367 /* Main.storyboard */,
 				E902C4431EBBC1F60026B367 /* cat1.jpg */,
 				E902C4181EBBB5180026B367 /* Assets.xcassets */,
 				E902C41A1EBBB5180026B367 /* LaunchScreen.storyboard */,
-				E902C41D1EBBB5180026B367 /* Info.plist */,
 			);
 			path = Lifelog;
 			sourceTree = "<group>";
@@ -271,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E902C4481EC1D64E0026B367 /* SelectViewController.swift in Sources */,
 				E902C4141EBBB5180026B367 /* ViewController.swift in Sources */,
 				E902C4121EBBB5180026B367 /* AppDelegate.swift in Sources */,
+				E902C4461EC1CFF90026B367 /* InputDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
