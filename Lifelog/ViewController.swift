@@ -12,8 +12,9 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
 
     @IBOutlet var table:UITableView!
     
+    //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
     var imgArray:NSArray = ["dog1.jpg","cat1.jpg"]
-    var imageColler:NSArray = ["赤色.jpg"]
+    var imageColler:NSArray = ["赤色.jpg","赤色.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +32,16 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = table.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath)
         
-        let img = UIImage(named:"\(imgArray[indexPath.row])")
-        //let img2 = UIImage(named:"\(imageColler[indexPath.row])")
+        let imgA = UIImage(named:"\(imgArray[indexPath.row])")
+        let imgC = UIImage(named:"\(imageColler[indexPath.row])")
         
         // Tag番号 1 で UIImageView インスタンスの生成
         let imageView = table.viewWithTag(1) as! UIImageView
-        imageView.image = img
+        imageView.image = imgA
         
         // Tag番号 ２ で UILabel インスタンスの生成
-      //  let imageView2 = table.viewWithTag(2) as! UIImageView
-      //  imageView2.image = img2
+        let imageView2 = table.viewWithTag(2) as! UIImageView
+        imageView2.image = imgC
        
         /* // Tag番号 ３ で UILabel インスタンスの生成
         let label2 = table.viewWithTag(3) as! UILabel
