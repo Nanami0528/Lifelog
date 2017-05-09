@@ -111,11 +111,11 @@
 				E902C4131EBBB5180026B367 /* ViewController.swift */,
 				E902C4451EC1CFF90026B367 /* InputDataViewController.swift */,
 				E902C4471EC1D64E0026B367 /* SelectViewController.swift */,
-				E902C41D1EBBB5180026B367 /* Info.plist */,
 				E902C4411EBBBCE30026B367 /* 赤色.jpg */,
 				E902C43F1EBBBCB10026B367 /* dog1.jpg */,
-				E902C4151EBBB5180026B367 /* Main.storyboard */,
 				E902C4431EBBC1F60026B367 /* cat1.jpg */,
+				E902C4151EBBB5180026B367 /* Main.storyboard */,
+				E902C41D1EBBB5180026B367 /* Info.plist */,
 				E902C4181EBBB5180026B367 /* Assets.xcassets */,
 				E902C41A1EBBB5180026B367 /* LaunchScreen.storyboard */,
 			);
@@ -208,6 +208,7 @@
 				TargetAttributes = {
 					E902C40D1EBBB5180026B367 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Z4FJZP66WG;
 						ProvisioningStyle = Automatic;
 					};
 					E902C4211EBBB5180026B367 = {
@@ -432,7 +433,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z4FJZP66WG;
 				INFOPLIST_FILE = Lifelog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomozoe.Lifelog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,7 +447,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z4FJZP66WG;
 				INFOPLIST_FILE = Lifelog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomozoe.Lifelog;
 				PRODUCT_NAME = "$(TARGET_NAME)";

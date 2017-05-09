@@ -8,9 +8,10 @@
 
 import UIKit
 
-class InputDataViewController: UIViewController {
+class InputDataViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
     @IBOutlet var TextView:UITextView!
+    @IBOutlet var photoImageView:UIImageView! //写真表示用ImageView
     
   //  let saveData = UserDefaults.standard
 
@@ -26,13 +27,40 @@ class InputDataViewController: UIViewController {
     }
     
     @IBAction func inputdata(){
-       
         //saveData.set
        
         //キーボードを閉じる
         TextView.resignFirstResponder()
     }
+    
+    
+    //写真押した時に呼ばれるメソッド
+    @IBAction func TappedPhoto(){
+        pickercontroller(sourceType: .photoLibrary)
 
+    }
+    
+    //アルバムの呼び出しメソッド（アルバムのソースタイプが引数）
+    func pickercontroller(sourceType: UIImagePickerControllerSourceType){
+        if UIImagePickerController.isSourceTypeAvailable(sourceType){
+            let picker = UIImagePickerController()
+            picker.sourceType = sourceType
+            picker.delegate = self
+            self.present(picker,animated: true,completion: nil)
+        }
+    }
+
+    //写真が選択された時に呼び出されるメソッド
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: nil)
+        
+        //画像を出力
+        photoImageView.image = info[UIImagePickerControllerOriginalImage]as?UIImage
+    }
+    
+    
+    
+    
    }
 
 /*
