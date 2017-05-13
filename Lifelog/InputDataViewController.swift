@@ -15,7 +15,7 @@ class InputDataViewController: UIViewController,UINavigationControllerDelegate,U
     
     //スクリーンショット
     @IBOutlet var screenShot: UIImage!
-    @IBOutlet var capturedImage : UIImageView!
+    @IBOutlet var capturedImage : UIImage!
     @IBOutlet var screenShotView:UIView!
     
   //  let saveData = UserDefaults.standard
@@ -85,17 +85,23 @@ class InputDataViewController: UIViewController,UINavigationControllerDelegate,U
     
     @IBAction func go (){
         // キャプチャ画像を取得 capturedImageのimageにセット.
-        capturedImage.image = getScreenShot() as UIImage
+        capturedImage = getScreenShot() as UIImage
         
+        
+        //画面遷移
+        performSegue(withIdentifier: "toViewController", sender: nil)
                
     }
     
     
-    /*override func prepare(for segue:UIStoryboardSegue,sender:Any?){
-       let viewcontrollerVC = segue.destination as! ViewController
-        viewcontrollerVC.
-        
-    }*/
+    override func prepare(for segue:UIStoryboardSegue,sender:Any?){
+        if segue.identifier == "toViewController" {
+       let viewcontroller = segue.destination as! ViewController
+        viewcontroller.capturedImage = capturedImage
+            
+            
+        }
+    }
     
     
     
