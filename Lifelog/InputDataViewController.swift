@@ -13,6 +13,11 @@ class InputDataViewController: UIViewController,UINavigationControllerDelegate,U
     @IBOutlet var TextView:UITextView!
     @IBOutlet var photoImageView:UIImageView! //写真表示用ImageView
     
+    //スクリーンショット
+    @IBOutlet var screenShot: UIImage!
+    @IBOutlet var capturedImage : UIImageView!
+    @IBOutlet var screenShotView:UIView!
+    
   //  let saveData = UserDefaults.standard
 
     override func viewDidLoad() {
@@ -57,6 +62,42 @@ class InputDataViewController: UIViewController,UINavigationControllerDelegate,U
         //画像を出力
         photoImageView.image = info[UIImagePickerControllerOriginalImage]as?UIImage
     }
+    
+    
+    //スクリーンショット関係
+    
+    private func getScreenShot() -> UIImage {
+        // キャプチャする範囲を取得.
+        let rect = screenShotView.frame
+        
+        // ビットマップ画像のcontextを作成.
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        // 対象のview内の描画をcontextに複写する.
+        self.view.layer.render(in: context)
+        // 現在のcontextのビットマップをUIImageとして取得.
+        let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        // contextを閉じる.
+        UIGraphicsEndImageContext()
+        
+        return capturedImage
+    }
+    
+    @IBAction func go (){
+        // キャプチャ画像を取得 capturedImageのimageにセット.
+        capturedImage.image = getScreenShot() as UIImage
+        
+               
+    }
+    
+    
+    /*override func prepare(for segue:UIStoryboardSegue,sender:Any?){
+       let viewcontrollerVC = segue.destination as! ViewController
+        viewcontrollerVC.
+        
+    }*/
+    
+    
     
     
     
