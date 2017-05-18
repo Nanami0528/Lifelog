@@ -23,7 +23,22 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         super.viewDidLoad()
         test.image = capturedImage
         
-    }
+         //imgArray.insert("dog1.jpg", at: 2)
+        
+        
+        // UserDefaultsを使用できるようにする
+        let defaults = UserDefaults.standard
+        
+        // UserDefaultsに保存する
+       // defaults.set(str, forKey: "str")
+          defaults.set(capturedImage, forKey: "img1")
+        
+        
+        // UserDefaultsから値を読み込む
+       // let str2:String = defaults.string(forKey: "str")
+      // let capturedImage = defaults.data(forKey:"img1")
+
+        }
     
     //Table Viewのセルの数を指定
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
