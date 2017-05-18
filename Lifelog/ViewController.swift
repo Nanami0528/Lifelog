@@ -13,6 +13,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     @IBOutlet var table:UITableView!
     @IBOutlet var capturedImage:UIImage?
     @IBOutlet var test:UIImageView!
+    @IBOutlet var toSelectVIew:UIButton!
        
     //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
     var imgArray:NSArray = ["dog1.jpg","cat1.jpg"]
@@ -59,6 +60,8 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    
+  
 
 
 
