@@ -16,17 +16,19 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     @IBOutlet var toSelectVIew:UIButton!
        
     //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
-    var imgArray:NSArray = ["dog1.jpg","cat1.jpg"]
-    var imageColler:NSArray = ["赤色.jpg","赤色.jpg"]
+    var imgArray:Array = ["dog1.jpg","cat1.jpg"]
+    var imageColler:Array = ["赤色.jpg","赤色.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        test.image = capturedImage
+        //test.image = capturedImage
         
-         //imgArray.insert("dog1.jpg", at: 2)
+         imgArray.insert("capturedImage", at: 2)
+         imageColler.insert("赤色.jpg", at: 2)
+print(imgArray)
         
         
-        // UserDefaultsを使用できるようにする
+      /*  // UserDefaultsを使用できるようにする
         let defaults = UserDefaults.standard
         
         // UserDefaultsに保存する
@@ -37,7 +39,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         // UserDefaultsから値を読み込む
        // let str2:String = defaults.string(forKey: "str")
       // let capturedImage = defaults.data(forKey:"img1")
-
+*/
         }
     
     //Table Viewのセルの数を指定
