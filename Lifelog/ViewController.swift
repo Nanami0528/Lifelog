@@ -11,29 +11,35 @@ import UIKit
 class ViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
 
     @IBOutlet var table:UITableView!
-    @IBOutlet var capturedImage:UIImage?
+    @IBOutlet var capturedImage:UIImage!
     @IBOutlet var test:UIImageView!
     @IBOutlet var toSelectVIew:UIButton!
+    
+    var num:Int!
        
     //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
-    var imgArray:Array = ["dog1.jpg","cat1.jpg"]
+    //var imgArray:[UIImage] = [dog1.jpg,cat1.jpg]
+    var imgArray:[UIImage] = []
     var imageColler:Array = ["赤色.jpg","赤色.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        num = 0
         //test.image = capturedImage
         
-         imgArray.insert("capturedImage", at: 2)
+      /*   imgArray.insert("capturedImage", at: 2)
          imageColler.insert("赤色.jpg", at: 2)
-print(imgArray)
+print(imgArray)*/
         
         
-      /*  // UserDefaultsを使用できるようにする
+        /*//UserDefaults保存関係↓
+        // UserDefaultsを使用できるようにする
         let defaults = UserDefaults.standard
         
         // UserDefaultsに保存する
        // defaults.set(str, forKey: "str")
-          defaults.set(capturedImage, forKey: "img1")
+       //   defaults.set(capturedImage, forKey: "img1")
         
         
         // UserDefaultsから値を読み込む
@@ -42,6 +48,46 @@ print(imgArray)
 */
         }
     
+    
+   //UserDefaults保存関係↓
+   /* public func UIImagePNGRepresentation(_ image: UIImage) -> Data?{
+
+       // return
+    }
+    func saveImage3(pn:Int,imgs:[UIImage]){
+        // UserDefaultsを使用できるようにするe
+        let defaults = UserDefaults.standard
+        // [UIImage] → [NSData]
+        
+        // let dataImages: [NSData] = photos.map { (image) -> NSData in
+        let dataImages: [Data] = imgArray.map{ (image) -> Data in
+            UIKit.UIImagePNGRepresentation(image)!
+        }
+        
+        //
+        let photosName:String = "imgArray" + String(pn)//保存名を決定
+        defaults.set(dataImages, forKey: photosName)
+        
+    }*/
+    
+    
+    
+    
+    //一旦arrayに保存は放置
+    /*override func viewWillAppear(_ animated: Bool) {
+        //imgArray.insert("capturedImage", at: 2)
+        num = num + 1
+        print(num)
+        if num > 1{
+            
+        
+        imgArray.insert(capturedImage, at: 2)
+        imageColler.insert("赤色.jpg", at: 2)
+        print(imgArray)
+        }
+    }*/
+    
+    
     //Table Viewのセルの数を指定
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imgArray.count
@@ -49,6 +95,8 @@ print(imgArray)
     
     //各セルの要素を設定する
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+       
         
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = table.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath)
