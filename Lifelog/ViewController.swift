@@ -73,7 +73,6 @@ print(imgArray)*/
     
     
     
-    //一旦arrayに保存は放置
     /*override func viewWillAppear(_ animated: Bool) {
         //imgArray.insert("capturedImage", at: 2)
         num = num + 1
@@ -91,12 +90,16 @@ print(imgArray)*/
     //Table Viewのセルの数を指定
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imgArray.count
+        
+        
     }
     
     //各セルの要素を設定する
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       
+        imgArray.insert(capturedImage, at: 2)
+        imageColler.insert("赤色.jpg", at: 2)
+        print(imgArray)
         
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = table.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath)
@@ -117,7 +120,12 @@ print(imgArray)*/
         let label2 = table.viewWithTag(3) as! UILabel
         label2.text = "\(imageTitles[indexPath.row])"*/
         
+        
+        
+        
         return cell
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
