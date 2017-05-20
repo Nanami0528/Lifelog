@@ -73,18 +73,23 @@ print(imgArray)*/
     
     
     
-    /*override func viewWillAppear(_ animated: Bool) {
-        //imgArray.insert("capturedImage", at: 2)
+  override func viewWillAppear(_ animated: Bool) {
+      /*  //imgArray.insert("capturedImage", at: 2)
         num = num + 1
         print(num)
         if num > 1{
             
-        
-        imgArray.insert(capturedImage, at: 2)
-        imageColler.insert("赤色.jpg", at: 2)
+        //imgArray.append(capturedImage)
+*/
+    
+    if  capturedImage != nil {
+        imgArray.insert(capturedImage, at: 0)
+        imageColler.insert("赤色.jpg", at: 0)
         print(imgArray)
-        }
-    }*/
+    }else{
+        
+        } //}
+    }
     
     
     //Table Viewのセルの数を指定
@@ -97,9 +102,7 @@ print(imgArray)*/
     //各セルの要素を設定する
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        imgArray.insert(capturedImage, at: 2)
-        imageColler.insert("赤色.jpg", at: 2)
-        print(imgArray)
+       
         
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = table.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath)

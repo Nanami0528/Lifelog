@@ -90,7 +90,8 @@ class InputDataViewController: UIViewController,UINavigationControllerDelegate,U
         
         //画面遷移
         performSegue(withIdentifier: "toViewController", sender: nil)
-               
+        
+        
     }
     
     
