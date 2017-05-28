@@ -15,18 +15,19 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     @IBOutlet var test:UIImageView!
     @IBOutlet var toSelectVIew:UIButton!
     
-    var num:Int!
-       
+   
+    
+    
     //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
     //var imgArray:[UIImage] = [dog1.jpg,cat1.jpg]
     var imgArray:[UIImage] = []
     var imageColler:Array = ["赤色.jpg","赤色.jpg"]
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        num = 0
-        //test.image = capturedImage
+              //test.image = capturedImage
         
       /*   imgArray.insert("capturedImage", at: 2)
          imageColler.insert("赤色.jpg", at: 2)
@@ -74,25 +75,18 @@ print(imgArray)*/
     
     
   override func viewWillAppear(_ animated: Bool) {
-      /*  //imgArray.insert("capturedImage", at: 2)
-        num = num + 1
-        print(num)
-        if num > 1{
-            
-        //imgArray.append(capturedImage)
-*/
-    
+   
+    // !=はノットイコールやから   nilではない = 画像がある という意味
     if  capturedImage != nil {
+        
         imgArray.insert(capturedImage, at: 0)
         imageColler.insert("赤色.jpg", at: 0)
         print(imgArray)
-    }else{
-        
-        } //}
+    }
     }
     
     
-    //Table Viewのセルの数を指定
+    //Table Viewのセルの数を指定 imgArrayの数だけtableViewのセルを作る
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imgArray.count
         
@@ -100,24 +94,27 @@ print(imgArray)*/
     }
     
     //各セルの要素を設定する
+    //cellForRowAt:セルがテーブルビューの特定の場所に挿入されるように情報取り出して！！
+    //indexPath:選択したところ！
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
        
         
         // tableCell の ID で UITableViewCell のインスタンスを生成
         let cell = table.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath)
+       
         
-        let imgA = UIImage(named:"\(imgArray[indexPath.row])")
-        let imgC = UIImage(named:"\(imageColler[indexPath.row])")
+      
+        
         
         // Tag番号 1 で UIImageView インスタンスの生成
         let imageView = table.viewWithTag(1) as! UIImageView
-        imageView.image = imgA
-        
+       // imageView.image = imgA
+        imageView.image = imgArray[indexPath.row]
         
         // Tag番号 ２ で UILabel インスタンスの生成
         let imageView2 = table.viewWithTag(2) as! UIImageView
-        imageView2.image = imgC
+        imageView2.image = UIImage(named:"\(imageColler[indexPath.row])")
        
         /* // Tag番号 ３ で UILabel インスタンスの生成
         let label2 = table.viewWithTag(3) as! UILabel
