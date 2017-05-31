@@ -29,14 +29,11 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
               //test.image = capturedImage
         
-      /*   imgArray.insert("capturedImage", at: 2)
-         imageColler.insert("赤色.jpg", at: 2)
-print(imgArray)*/
         
         
-        /*//UserDefaults保存関係↓
+        //UserDefaults保存関係↓
         // UserDefaultsを使用できるようにする
-        let defaults = UserDefaults.standard
+       // let defaults = UserDefaults.standard
         
         // UserDefaultsに保存する
        // defaults.set(str, forKey: "str")
@@ -46,16 +43,16 @@ print(imgArray)*/
         // UserDefaultsから値を読み込む
        // let str2:String = defaults.string(forKey: "str")
       // let capturedImage = defaults.data(forKey:"img1")
-*/
+
         }
     
     
    //UserDefaults保存関係↓
-   /* public func UIImagePNGRepresentation(_ image: UIImage) -> Data?{
-
-       // return
-    }
-    func saveImage3(pn:Int,imgs:[UIImage]){
+   /* public func UIImagePNGRepresentation(image: UIImage) -> Data?{
+       
+     }*/
+    
+    /*func saveImage3(pn:Int,imgs:[UIImage]){
         // UserDefaultsを使用できるようにするe
         let defaults = UserDefaults.standard
         // [UIImage] → [NSData]
@@ -70,6 +67,26 @@ print(imgArray)*/
         defaults.set(dataImages, forKey: photosName)
         
     }*/
+   /* func saveImage3(pn:Int,imgs:[UIImage]){
+        let photos = imgs
+        let photoData: UserDefaults = UserDefaults.standard
+        // [UIImage] → [NSData]
+        
+        // let dataImages: [NSData] = photos.map { (image) -> NSData in
+        let dataImages: [Data] = photos.map { (image) -> Data in
+            UIKit.UIImagePNGRepresentation(image)!
+        }
+        //
+        let photosName:String = "photos" + String(pn)//保存名を決定
+        photoData.set(dataImages, forKey: photosName)
+        
+        }*/
+    
+    
+    
+    
+    
+
     
     
     
@@ -82,7 +99,37 @@ print(imgArray)*/
         imgArray.insert(capturedImage, at: 0)
         imageColler.insert("赤色.jpg", at: 0)
         print(imgArray)
+        
+        
+       /* let userDefaults = UserDefaults.standard
+        let imageData = UIImagePNGRepresentation(capturedImage)
+        userDefaults.set(imageData, forKey: "imageData")
+        userDefaults.synchronize()
+        
+        print(userDefaults,"Hey!!!")
+        
+        if (userDefaults.object(forKey: "imageData") != nil) {
+            print("データ有り")
+        }*/
+        
+        let userDefaults = UserDefaults.standard
+        // [UIImage] → [Data]
+        let data: [Data] = imgArray.map { (image) -> Data in
+            UIImagePNGRepresentation(image)!
+        }
+        
+        userDefaults.set(data, forKey: "imageData")
+        userDefaults.synchronize()
+        
+        print(userDefaults,"←写真保存")
+       
+        
     }
+    
+    
+    
+    
+    
     }
     
     
@@ -109,11 +156,13 @@ print(imgArray)*/
         
         // Tag番号 1 で UIImageView インスタンスの生成
         let imageView = table.viewWithTag(1) as! UIImageView
-       // imageView.image = imgA
+       // imgArrayの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
         imageView.image = imgArray[indexPath.row]
+        print(indexPath.row,"←indexPath.row　行数入ってた")
         
         // Tag番号 ２ で UILabel インスタンスの生成
         let imageView2 = table.viewWithTag(2) as! UIImageView
+        // imageCollerの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
         imageView2.image = UIImage(named:"\(imageColler[indexPath.row])")
        
         /* // Tag番号 ３ で UILabel インスタンスの生成
