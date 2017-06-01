@@ -94,6 +94,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
   override func viewWillAppear(_ animated: Bool) {
    
     // !=はノットイコールやから   nilではない = 画像がある という意味
+    //capturedImageがあったら表示
     if  capturedImage != nil {
         
         imgArray.insert(capturedImage, at: 0)
@@ -119,17 +120,28 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         }
         
         userDefaults.set(data, forKey: "imageData")
+        //userDefaultsをplistファイルへの出力と同期する。
         userDefaults.synchronize()
-        
         print(userDefaults,"←写真保存")
-       
         
+        //imgArray =  userDefaults.objectForKey("imageData") as! [NSData]
+   
+        // UserDefaultsから値を読み込む
+        imgArray = userDefaults.object(forKey: "imageData") as! [UIImage]
+
+        /*  if  data == userDefaults.object(forKey:"imgData") as! [Data]{
+         // UserDefaultsから画像が取得出来た場合ImageViewのimageに設定
+         imgArray = data as! [UIImage]
+         }
+ 
+ */
+
     }
-    
-    
-    
-    
-    
+ 
+ 
+ 
+ 
+ 
     }
     
     
