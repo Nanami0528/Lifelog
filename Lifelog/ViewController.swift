@@ -173,8 +173,9 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         // Tag番号 1 で UIImageView インスタンスの生成
         let imageView = table.viewWithTag(1) as! UIImageView
        // imgArrayの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
-        imageView.image = imgArray[indexPath.row]
+       // imageView.image = imgArray[indexPath.row]
        // print(indexPath.row,"←indexPath.row　行数入ってた")
+        imageView.image =  UIImage(data: test[indexPath.row])
         
         // Tag番号 ２ で UILabel インスタンスの生成
         let imageView2 = table.viewWithTag(2) as! UIImageView
