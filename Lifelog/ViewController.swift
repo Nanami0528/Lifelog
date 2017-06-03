@@ -114,6 +114,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         }*/
         
         let userDefaults = UserDefaults.standard
+
         // [UIImage] → [Data]
         let data: [Data] = imgArray.map { (image) -> Data in
             UIImagePNGRepresentation(image)!
@@ -127,8 +128,11 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         //imgArray =  userDefaults.objectForKey("imageData") as! [NSData]
    
         // UserDefaultsから値を読み込む
-        imgArray = userDefaults.object(forKey: "imageData") as! [UIImage]
+        //imgArray = userDefaults.object(forKey: "imageData") as! [UIImage]
+        let test = userDefaults.object(forKey: "imageData") as! [Data]
+        print(test,"←保存できてる？")
 
+        
         /*  if  data == userDefaults.object(forKey:"imgData") as! [Data]{
          // UserDefaultsから画像が取得出来た場合ImageViewのimageに設定
          imgArray = data as! [UIImage]
@@ -170,7 +174,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         let imageView = table.viewWithTag(1) as! UIImageView
        // imgArrayの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
         imageView.image = imgArray[indexPath.row]
-        print(indexPath.row,"←indexPath.row　行数入ってた")
+       // print(indexPath.row,"←indexPath.row　行数入ってた")
         
         // Tag番号 ２ で UILabel インスタンスの生成
         let imageView2 = table.viewWithTag(2) as! UIImageView
