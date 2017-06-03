@@ -12,7 +12,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
 
     @IBOutlet var table:UITableView!
     @IBOutlet var capturedImage:UIImage!
-    @IBOutlet var test:UIImageView!
+   // @IBOutlet var test:UIImageView!
     @IBOutlet var toSelectVIew:UIButton!
     
    
@@ -22,6 +22,9 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     //var imgArray:[UIImage] = [dog1.jpg,cat1.jpg]
     var imgArray:[UIImage] = []
     var imageColler:Array = ["赤色.jpg","赤色.jpg"]
+    var test:Data!
+    
+    
   
     
     override func viewDidLoad() {
@@ -129,7 +132,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
    
         // UserDefaultsから値を読み込む
         //imgArray = userDefaults.object(forKey: "imageData") as! [UIImage]
-        let test = userDefaults.object(forKey: "imageData") as! [Data]
+         let test = userDefaults.object(forKey: "imageData") as! [Data]
         print(test,"←保存できてる？")
 
         
@@ -173,7 +176,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         // Tag番号 1 で UIImageView インスタンスの生成
         let imageView = table.viewWithTag(1) as! UIImageView
        // imgArrayの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
-       // imageView.image = imgArray[indexPath.row]
+        //imageView.image = imgArray[indexPath.row]
        // print(indexPath.row,"←indexPath.row　行数入ってた")
         imageView.image =  UIImage(data: test[indexPath.row])
         
