@@ -22,7 +22,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     //var imgArray:[UIImage] = [dog1.jpg,cat1.jpg]
     var imgArray:[UIImage] = []
     var imageColler:Array = ["赤色.jpg","赤色.jpg"]
-    var test:Data!
+    var test:[Data] = []
     
     
   
@@ -132,7 +132,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
    
         // UserDefaultsから値を読み込む
         //imgArray = userDefaults.object(forKey: "imageData") as! [UIImage]
-         let test = userDefaults.object(forKey: "imageData") as! [Data]
+          test = userDefaults.object(forKey: "imageData") as! [Data]
         print(test,"←保存できてる？")
 
         
