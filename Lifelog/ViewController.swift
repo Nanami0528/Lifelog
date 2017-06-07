@@ -21,7 +21,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
     //var imgArray:[UIImage] = [dog1.jpg,cat1.jpg]
     var imgArray:[UIImage] = []
-    var imageColler:Array = ["赤色.jpg","赤色.jpg"]
+    var imageColler:Array = ["赤色.jpg","赤色.jpg","赤色.jpg","赤色.jpg","赤色.jpg"]
     var test:[Data] = []
     
     
@@ -34,23 +34,9 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
         
         
-        //UserDefaults保存関係↓
-        // UserDefaultsを使用できるようにする
-       // let defaults = UserDefaults.standard
-        
-        // UserDefaultsに保存する
-       // defaults.set(str, forKey: "str")
-       //   defaults.set(capturedImage, forKey: "img1")
-        
-        
-        // UserDefaultsから値を読み込む
-       // let str2:String = defaults.string(forKey: "str")
-      // let capturedImage = defaults.data(forKey:"img1")
-
+    
         }
     
-    
-
     
     
     
@@ -73,7 +59,21 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         
  
         let userDefaults = UserDefaults.standard
-
+        
+        //今までに保存したデータがあるか確認　もしあったら
+        //!=はノットイコールやから   nilではない = 画像がある という意味
+        if (userDefaults.object(forKey: "imageData") != nil){
+            print("データあり")
+            //savedDataにuserDefaultsを呼び出す
+            let savedData = userDefaults.object(forKey: "imageData")as![Data]
+            //imgArrayにuserDefaultsに保存されていたデータを追加（[savedData]保存されている数だけ追加）
+            for i in 0..<savedData.count {
+                
+                imgArray.append(UIImage(data:savedData[i])!)
+                
+            }
+        }
+        //二回目の場合　新しいのに古いのを追加した完成版を改めて保存
         // [UIImage] → [Data]
         let data: [Data] = imgArray.map { (image) -> Data in
             UIImagePNGRepresentation(image)!
@@ -84,18 +84,14 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         userDefaults.synchronize()
         print(userDefaults,"←写真保存")
         
-     
+        //imgArray =  userDefaults.objectForKey("imageData") as! [NSData]
+   
+        // UserDefaultsから値を読み込む
+        //imgArray = userDefaults.object(forKey: "imageData") as! [UIImage]
           test = userDefaults.object(forKey: "imageData") as! [Data]
         print(test,"←保存できてる？")
 
         
-        /*  if  data == userDefaults.object(forKey:"imgData") as! [Data]{
-         // UserDefaultsから画像が取得出来た場合ImageViewのimageに設定
-         imgArray = data as! [UIImage]
-         }
- 
- */
-
     }
  
  
@@ -131,7 +127,8 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
        // imgArrayの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
         //imageView.image = imgArray[indexPath.row]
        // print(indexPath.row,"←indexPath.row　行数入ってた")
-        imageView.image =  UIImage(data: test[indexPath.row])
+       // imageView.image =  UIImage(data: test[indexPath.row])
+         imageView.image =  imgArray[indexPath.row]
         
         // Tag番号 ２ で UILabel インスタンスの生成
         let imageView2 = table.viewWithTag(2) as! UIImageView
@@ -156,10 +153,8 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     }
     
     
-    
-    
-    
-   //いらんやつ
+  
+    //いらんメモ
     //UserDefaults保存関係↓
     /* public func UIImagePNGRepresentation(image: UIImage) -> Data?{
      
@@ -194,7 +189,6 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
      photoData.set(dataImages, forKey: photosName)
      
      }*/
-  
 
 
 
