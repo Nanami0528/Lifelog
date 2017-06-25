@@ -113,6 +113,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     //indexPath:選択したところ！
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
        
         
         // tableCell の ID で UITableViewCell のインスタンスを生成
@@ -153,7 +154,27 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     }
     
     
-  
+    
+  /*  // セルの削除許可の設定
+    func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            // 削除
+             imgArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+            
+            // データの保存
+            let defaults = UserDefaults.standard
+            defaults.set(Data(), forKey: "imageData")
+            defaults.synchronize()
+        }
+    }
+*/
+    
+    
     
 
 
