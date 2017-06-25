@@ -54,7 +54,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     if  capturedImage != nil {
         
         imgArray.insert(capturedImage, at: 0)
-        imageColler.insert("赤色.jpg", at: 0)
+      //  imageColler.insert("赤色.jpg", at: 0)
         print(imgArray)
         
  
@@ -134,7 +134,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
         let imageView2 = table.viewWithTag(2) as! UIImageView
         // imageCollerの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
         imageView2.image = UIImage(named:"\(imageColler[indexPath.row])")
-       
+   
         /* // Tag番号 ３ で UILabel インスタンスの生成
         let label2 = table.viewWithTag(3) as! UILabel
         label2.text = "\(imageTitles[indexPath.row])"*/
@@ -154,42 +154,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     
   
-    //いらんメモ
-    //UserDefaults保存関係↓
-    /* public func UIImagePNGRepresentation(image: UIImage) -> Data?{
-     
-     }*/
     
-    /*func saveImage3(pn:Int,imgs:[UIImage]){
-     // UserDefaultsを使用できるようにするe
-     let defaults = UserDefaults.standard
-     // [UIImage] → [NSData]
-     
-     // let dataImages: [NSData] = photos.map { (image) -> NSData in
-     let dataImages: [Data] = imgArray.map{ (image) -> Data in
-     UIKit.UIImagePNGRepresentation(image)!
-     }
-     
-     //
-     let photosName:String = "imgArray" + String(pn)//保存名を決定
-     defaults.set(dataImages, forKey: photosName)
-     
-     }*/
-    /* func saveImage3(pn:Int,imgs:[UIImage]){
-     let photos = imgs
-     let photoData: UserDefaults = UserDefaults.standard
-     // [UIImage] → [NSData]
-     
-     // let dataImages: [NSData] = photos.map { (image) -> NSData in
-     let dataImages: [Data] = photos.map { (image) -> Data in
-     UIKit.UIImagePNGRepresentation(image)!
-     }
-     //
-     let photosName:String = "photos" + String(pn)//保存名を決定
-     photoData.set(dataImages, forKey: photosName)
-     
-     }*/
-
 
 
 }

@@ -15,10 +15,10 @@
 		E902C4271EBBB5180026B367 /* LifelogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4261EBBB5180026B367 /* LifelogTests.swift */; };
 		E902C4321EBBB5180026B367 /* LifelogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4311EBBB5180026B367 /* LifelogUITests.swift */; };
 		E902C4401EBBBCB10026B367 /* dog1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E902C43F1EBBBCB10026B367 /* dog1.jpg */; };
-		E902C4421EBBBCE30026B367 /* 赤色.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E902C4411EBBBCE30026B367 /* 赤色.jpg */; };
 		E902C4441EBBC1F60026B367 /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E902C4431EBBC1F60026B367 /* cat1.jpg */; };
 		E902C4461EC1CFF90026B367 /* InputDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4451EC1CFF90026B367 /* InputDataViewController.swift */; };
 		E902C4481EC1D64E0026B367 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4471EC1D64E0026B367 /* SelectViewController.swift */; };
+		E9578AA91EF2CE4A00717272 /* 赤色.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E9578AA81EF2CE4A00717272 /* 赤色.jpg */; };
 		E97D72CF1ED049DD004F4AC8 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E97D72CE1ED049DD004F4AC8 /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -54,10 +54,10 @@
 		E902C4311EBBB5180026B367 /* LifelogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifelogUITests.swift; sourceTree = "<group>"; };
 		E902C4331EBBB5180026B367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E902C43F1EBBBCB10026B367 /* dog1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog1.jpg; sourceTree = "<group>"; };
-		E902C4411EBBBCE30026B367 /* 赤色.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "赤色.jpg"; sourceTree = "<group>"; };
 		E902C4431EBBC1F60026B367 /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat1.jpg; sourceTree = "<group>"; };
 		E902C4451EC1CFF90026B367 /* InputDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputDataViewController.swift; sourceTree = "<group>"; };
 		E902C4471EC1D64E0026B367 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		E9578AA81EF2CE4A00717272 /* 赤色.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "赤色.jpg"; sourceTree = "<group>"; };
 		E97D72CE1ED049DD004F4AC8 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,9 +112,9 @@
 				E902C4111EBBB5180026B367 /* AppDelegate.swift */,
 				E902C4131EBBB5180026B367 /* ViewController.swift */,
 				E902C4451EC1CFF90026B367 /* InputDataViewController.swift */,
+				E9578AA81EF2CE4A00717272 /* 赤色.jpg */,
 				E902C4471EC1D64E0026B367 /* SelectViewController.swift */,
 				E97D72CE1ED049DD004F4AC8 /* icon.png */,
-				E902C4411EBBBCE30026B367 /* 赤色.jpg */,
 				E902C43F1EBBBCB10026B367 /* dog1.jpg */,
 				E902C4431EBBC1F60026B367 /* cat1.jpg */,
 				E902C4151EBBB5180026B367 /* Main.storyboard */,
@@ -251,10 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E902C4421EBBBCE30026B367 /* 赤色.jpg in Resources */,
 				E97D72CF1ED049DD004F4AC8 /* icon.png in Resources */,
 				E902C41C1EBBB5180026B367 /* LaunchScreen.storyboard in Resources */,
 				E902C4191EBBB5180026B367 /* Assets.xcassets in Resources */,
+				E9578AA91EF2CE4A00717272 /* 赤色.jpg in Resources */,
 				E902C4401EBBBCB10026B367 /* dog1.jpg in Resources */,
 				E902C4441EBBC1F60026B367 /* cat1.jpg in Resources */,
 				E902C4171EBBB5180026B367 /* Main.storyboard in Resources */,
