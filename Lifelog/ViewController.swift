@@ -21,7 +21,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     //配列上２個やのに下１個しか入ってない時、Tableviewセルの数２こやと動かない
     //var imageArray:[UIImage] = [dog1.jpg,cat1.jpg]
     var imageArray:[UIImage] = []
-    var imageColler:Array = ["赤色.jpg","赤色.jpg","赤色.jpg","赤色.jpg","赤色.jpg"]
+    //var imageColler:Array = ["赤色.jpg","赤色.jpg","赤色.jpg","赤色.jpg","赤色.jpg"]
     var test:[Data] = []
     
     
@@ -55,7 +55,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
        
         //配列の指定の箇所に要素を挿入(insert)する
         imageArray.insert(capturedImage, at: 0)
-      //imageColler.insert("赤色.jpg", at: 0)
+//       imageColler.insert("赤色.jpg", at: 0)
         print(imageArray)
         
         //インスタンスの作成→UserDefaultsの宣言
@@ -146,9 +146,9 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
          imageView.image =  imageArray[indexPath.row]
         
         // Tag番号 ２ で UILabel インスタンスの生成
-        let imageView2 = table.viewWithTag(2) as! UIImageView
+//        let imageView2 = table.viewWithTag(2) as! UIImageView
         // imageCollerの配列の画像をcellの行ごとに（indexPath.row）、imageViewに追加して行く
-        imageView2.image = UIImage(named:"\(imageColler[indexPath.row])")
+//        imageView2.image = UIImage(named:"\(imageColler[indexPath.row])")
    
         /* // Tag番号 ３ で UILabel インスタンスの生成
         let label2 = table.viewWithTag(3) as! UILabel
@@ -169,7 +169,7 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
     
     
     
-  /*  // セルの削除許可の設定
+    // セルの削除許可の設定
     func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool
     {
         return true
@@ -180,13 +180,16 @@ class ViewController: UIViewController , UITableViewDataSource, UITableViewDeleg
              imageArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
             
-            // データの保存
+           /* // データの保存
             let defaults = UserDefaults.standard
             defaults.set(Data(), forKey: "imageData")
             defaults.synchronize()
+          */
+            
+            
         }
     }
-*/
+
     
     
     
